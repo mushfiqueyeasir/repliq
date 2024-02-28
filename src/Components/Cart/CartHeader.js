@@ -20,7 +20,7 @@ const CartHeader = () => {
         {cartMenu.map((item, index) => (
           <button
             key={index}
-            className="flex justify-center text-xs lg:text-xl items-center gap-x-1 lg:gap-x-2 text-primary bg-primary/10 hover:bg-primary/20 duration-300 lg:px-4 py-2 rounded-lg font-semibold  w-full"
+            className="flex justify-center text-xs lg:text-sm 2xl:text-xl items-center gap-x-1 lg:gap-x-2 text-primary bg-primary/10 hover:bg-primary/20 duration-300 lg:px-2 2xl:px-4 py-2 rounded-lg font-semibold  w-full"
           >
             <span className="text-xs lg:text-2xl">{item.icon}</span>
             {item.title}

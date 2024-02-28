@@ -5,7 +5,7 @@ import ProductCard from "./ProductCard";
 const ProductList = ({ selectedCategory,addToCart }) => {
  
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 mt-6 p-4">
+    <div className="grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 gap-4 mt-6 p-4">
       {selectedCategory
         ? products
             .filter((item) => item.category === selectedCategory)

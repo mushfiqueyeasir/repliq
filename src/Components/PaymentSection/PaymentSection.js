@@ -1,14 +1,13 @@
 import React from "react";
 import { FaHandHoldingUsd } from "react-icons/fa";
 import { IoMdCloseCircleOutline } from "react-icons/io";
-import { toast } from 'react-toastify';
-const PaymentSection = ({ calculation,setPaymentSection,setCartProduct }) => {
-
-    const handlePaynow=()=>{
-        toast.success("Payment Done!")
-        setCartProduct([])
-        setPaymentSection(false)
-    }
+import { toast } from "react-toastify";
+const PaymentSection = ({ calculation, setPaymentSection, setCartProduct }) => {
+  const handlePaynow = () => {
+    toast.success("Payment Done!");
+    setCartProduct([]);
+    setPaymentSection(false);
+  };
   return (
     <section className="p-4">
       <div className="p-4 border rounded flex items-center justify-between">
@@ -16,7 +15,7 @@ const PaymentSection = ({ calculation,setPaymentSection,setCartProduct }) => {
         <h1 className="text-2xl font-bold text-black">${calculation.total}</h1>
       </div>
 
-      <div className="flex flex-col mx-auto gap-y-2 mt-4 lg:w-[60%]">
+      <div className="flex flex-col mx-auto gap-y-2 mt-4 lg:w-[70%]">
         <input
           type="text"
           name=""
@@ -38,7 +37,7 @@ const PaymentSection = ({ calculation,setPaymentSection,setCartProduct }) => {
           placeholder="Card Expire Date"
           className="text-xl p-4 focus:outline-none border-b-2"
         />
-         <input
+        <input
           type="text"
           name=""
           id=""
@@ -47,21 +46,23 @@ const PaymentSection = ({ calculation,setPaymentSection,setCartProduct }) => {
         />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3   lg:w-[60%] mx-auto mt-4">
-
-        <button onClick={()=>setPaymentSection(false)} className="flex justify-center py-3 rounded-lg items-center gap-x-4 text-xl text-error bg-error/40 font-semibold">
-          <IoMdCloseCircleOutline/>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3   lg:w-[70%] mx-auto mt-4">
+        <button
+          onClick={() => setPaymentSection(false)}
+          className="flex justify-center py-3 rounded-lg items-center gap-x-4 lg:gap-x-2 2xl:gap-x-4 text-xl lg:text-base 2xl:text-xl text-error bg-error/40 font-semibold"
+        >
+          <IoMdCloseCircleOutline />
           Cancel
         </button>
-      
-        <button onClick={handlePaynow}  className="flex justify-center py-3 rounded-lg items-center gap-x-4 text-xl text-white bg-[#3674D9] font-semibold">
-        <FaHandHoldingUsd />
-         Complete Payment
+
+        <button
+          onClick={handlePaynow}
+          className="flex justify-center py-3 rounded-lg items-center gap-x-4 lg:gap-x-2 2xl:gap-x-4 text-xl lg:text-base 2xl:text-xl text-white bg-[#3674D9] font-semibold"
+        >
+          <FaHandHoldingUsd />
+          Complete Payment
         </button>
-
       </div>
-
-
     </section>
   );
 };
