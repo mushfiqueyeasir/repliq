@@ -19,7 +19,7 @@ const CartItem = ({ updateCartItem, removeCart, item }) => {
    
   };
   return (
-    <td className="flex items-center justify-between w-full text-secondary text-xl font-semibold !p-0 border-none ">
+    <td className="flex items-center justify-between w-full text-secondary lg:text-xl font-semibold !p-0 border-none ">
       <div className=" flex justify-center">
         <FaRegEdit />
       </div>

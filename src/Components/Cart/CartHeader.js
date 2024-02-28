@@ -13,16 +13,16 @@ const cartMenu = [
 
 const CartHeader = () => {
     return (
-        <div className="flex justify-between items-center gap-x-3">
-        <button className="text-2xl">
+        <div className="flex justify-between items-center gap-x-1 lg:gap-x-3">
+        <button className="lg:text-2xl">
           <GrMenu />
         </button>
         {cartMenu.map((item, index) => (
           <button
             key={index}
-            className="md:flex justify-center text-xl items-center gap-x-2 text-primary bg-primary/10 hover:bg-primary/20 duration-300 px-4 py-2 rounded-lg font-semibold hidden w-full"
+            className="flex justify-center text-xs lg:text-xl items-center gap-x-1 lg:gap-x-2 text-primary bg-primary/10 hover:bg-primary/20 duration-300 lg:px-4 py-2 rounded-lg font-semibold  w-full"
           >
-            <span className="text-2xl">{item.icon}</span>
+            <span className="text-xs lg:text-2xl">{item.icon}</span>
             {item.title}
           </button>
         ))}

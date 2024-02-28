@@ -10,7 +10,7 @@ const Categories = ({selectedCategory,setSelectedCategory}) => {
         <button
           key={index}
           onClick={()=>setSelectedCategory(item)}
-          className={`border-2 ${selectedCategory===item?"border-[#3674D9] text-[#3674D9]":"border-secondary text-secondary"} px-4 py-2  font-bold rounded-md text-lg bg-white`}
+          className={`border-2 ${selectedCategory===item?"border-[#3674D9] text-[#3674D9]":"border-secondary text-secondary"} px-1 lg:px-4 py-1 lg:py-2  font-bold rounded-md text-xs h-full lg:text-lg bg-white`}
         >
           {item}
         </button>

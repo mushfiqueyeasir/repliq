@@ -16,7 +16,7 @@ const PaymentSection = ({ calculation,setPaymentSection,setCartProduct }) => {
         <h1 className="text-2xl font-bold text-black">${calculation.total}</h1>
       </div>
 
-      <div className="flex flex-col mx-auto gap-y-2 mt-4 w-[60%]">
+      <div className="flex flex-col mx-auto gap-y-2 mt-4 lg:w-[60%]">
         <input
           type="text"
           name=""
@@ -47,7 +47,7 @@ const PaymentSection = ({ calculation,setPaymentSection,setCartProduct }) => {
         />
       </div>
 
-      <div className="grid grid-cols-2 gap-3   w-[60%] mx-auto mt-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3   lg:w-[60%] mx-auto mt-4">
 
         <button onClick={()=>setPaymentSection(false)} className="flex justify-center py-3 rounded-lg items-center gap-x-4 text-xl text-error bg-error/40 font-semibold">
           <IoMdCloseCircleOutline/>
