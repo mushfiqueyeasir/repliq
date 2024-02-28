@@ -5,13 +5,13 @@ import CartCalculation from "./CartCalculation";
 import CartAction from "./CartAction";
 
 
-const Cart = () => {
+const Cart = ({cartProduct,removeCart,updateCartItem,calculation,setPaymentSection}) => {
   return (
     <section className="shadow p-4">
       <CartHeader />
-      <ItemCart />
-      <CartCalculation />
-      <CartAction/>
+      <ItemCart updateCartItem={updateCartItem} removeCart={removeCart} cartProduct={cartProduct}/>
+      <CartCalculation calculation={calculation} />
+      <CartAction setPaymentSection={setPaymentSection}/>
       
     </section>
   );

@@ -1,31 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaRegEdit, FaMinusCircle, FaTrashAlt } from "react-icons/fa";
 import { FaCirclePlus } from "react-icons/fa6";
-const CartItem = () => {
+const CartItem = ({ updateCartItem, removeCart, item }) => {
+  const [quantity, setQuantity] = useState(1);
+
+  const handleAdd = () => {
+    setQuantity((prev) => prev + 1);
+    item.quantity = quantity ;
+    updateCartItem(item);
+  };
+
+  const handleRemove = () => {
+    if(quantity > 1){
+      setQuantity((prev) => prev - 1);
+      item.quantity =  quantity ;
+      updateCartItem(item);
+    }
+   
+  };
   return (
     <td className="flex items-center justify-between w-full text-secondary text-xl font-semibold !p-0 border-none ">
       <div className=" flex justify-center">
         <FaRegEdit />
       </div>
       <div className="flex justify-between items-center p-2 border border-b-0 w-[90%]">
-        <h1 className=" ">Pure White & Black Sleeve</h1>
-        <h1 className="text-center">$91.00</h1>
+        <h1 className=" ">{item.title}</h1>
+        <h1 className="text-center">${item.price}</h1>
 
-        <div className="flex items-center justify-center gap-x-4 ">
-          <button>
+        <div className="flex items-center justify-start gap-x-4 ">
+          <button onClick={handleRemove}>
             <FaMinusCircle />
           </button>
-          1
-          <button>
+          {quantity}
+          <button onClick={handleAdd}>
             <FaCirclePlus />
           </button>
         </div>
 
-        <h1 className="text-center">$91.00</h1>
+        <h1 className="text-center">${item.price * quantity}</h1>
       </div>
-      <div className=" flex justify-center text-error">
+      <button
+        onClick={() => removeCart(item.title)}
+        className=" flex justify-center text-error"
+      >
         <FaTrashAlt />
-      </div>
+      </button>
     </td>
   );
 };
